@@ -1,0 +1,297 @@
+#Figure 5
+library(tidyverse)
+
+Both_Open_OTU_9_8$Barel
+Both_Open_OTU_9_8$Family
+Both_Open_OTU_9_8$Weight
+Both_Open_OTU_9_8$Sire
+Both_Open_OTU_9_8$Dam
+Both_Open_OTU_9_8$treatment
+Both_Open_OTU_9_8$AP7DV3P
+Both_Open_OTU_9_8$AP9HPNM
+Both_Open_OTU_9_8$APAAF2C
+Both_Open_OTU_9_8$APCFAK9
+Both_Open_OTU_9_8$APKA92U
+Both_Open_OTU_9_8$APMF3MR
+Both_Open_OTU_9_8$APRWKDH
+Both_Open_OTU_9_8$APT2EXF
+Both_Open_OTU_9_8$APXGWM6
+Both_Open_OTU_9_8$Aeromonadaceae
+Both_Open_OTU_9_8$Bifidobacteriaceae
+Both_Open_OTU_9_8$Desulfovibrionaceae
+Both_Open_OTU_9_8$Lactobacillaceae
+Both_Open_OTU_9_8$Mycoplasmataceae
+Both_Open_OTU_9_8$Pseudomonadaceae
+Both_Open_OTU_9_8$Streptococcaceae
+
+
+####Aeromonadaceae
+model1 <- lm(AP7DV3P ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model1)
+
+
+model2 <- lm(AP9HPNM ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model2)
+
+
+model3 <- lm(APAAF2C ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model3)
+
+
+model4 <- lm(APCFAK9 ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model4)
+
+
+model5 <- lm(APKA92U ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model5)
+
+
+model6 <- lm(APMF3MR ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model6)
+
+
+model7 <- lm(APRWKDH ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model7)
+
+
+model8 <- lm(APT2EXF ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model8)
+
+
+model9<- lm(APXGWM6 ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model9)
+
+
+
+####Bifidobacteriaceae
+model11 <- lm(AP7DV3P ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model11)
+
+
+model12 <- lm(AP9HPNM ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model12)
+
+
+model13 <- lm(APAAF2C ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model13)
+
+
+model14 <- lm(APCFAK9 ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model14)
+
+
+model15 <- lm(APKA92U ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model15)
+
+
+model16 <- lm(APMF3MR ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model16)
+
+
+model17 <- lm(APRWKDH ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model17)
+
+
+model18 <- lm(APT2EXF ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model18)
+
+
+model19<- lm(APXGWM6 ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model19)
+
+
+
+
+
+####Desulfovibrionaceae
+model21 <- lm(AP7DV3P ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model21)
+
+
+model22 <- lm(AP9HPNM ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model22)
+
+
+model23 <- lm(APAAF2C ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model23)
+
+
+model24 <- lm(APCFAK9 ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model24)
+
+
+model25 <- lm(APKA92U ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model25)
+
+
+model26 <- lm(APMF3MR ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model26)
+
+
+model27 <- lm(APRWKDH ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model27)
+
+
+model28 <- lm(APT2EXF ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model28)
+
+
+model29<- lm(APXGWM6 ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model29)
+
+
+
+
+####Lactobacillaceae
+model31 <- lm(AP7DV3P ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model31)
+
+
+model32 <- lm(AP9HPNM ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model32)
+
+
+model33 <- lm(APAAF2C ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model33)
+
+
+model34 <- lm(APCFAK9 ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model34)
+
+
+model35 <- lm(APKA92U ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model35)
+
+
+model36 <- lm(APMF3MR ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model36)
+
+
+model37 <- lm(APRWKDH ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model37)
+
+
+model38 <- lm(APT2EXF ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model38)
+
+
+model39<- lm(APXGWM6 ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model39)
+
+
+
+####Mycoplasmataceae
+model41 <- lm(AP7DV3P ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model41)
+
+
+model42 <- lm(AP9HPNM ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model42)
+
+
+model43 <- lm(APAAF2C ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model43)
+
+
+model44 <- lm(APCFAK9 ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model44)
+
+
+model45 <- lm(APKA92U ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model45)
+
+
+model46 <- lm(APMF3MR ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model46)
+
+
+model47 <- lm(APRWKDH ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model47)
+
+
+model48 <- lm(APT2EXF ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model48)
+
+
+model49<- lm(APXGWM6 ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model49)
+
+
+
+
+####Pseudomonadaceae
+model51 <- lm(AP7DV3P ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model51)
+
+
+model52 <- lm(AP9HPNM ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model52)
+
+
+model53 <- lm(APAAF2C ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model53)
+
+
+model54 <- lm(APCFAK9 ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model54)
+
+
+model55 <- lm(APKA92U ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model55)
+
+
+model56 <- lm(APMF3MR ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model56)
+
+
+model57 <- lm(APRWKDH ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model57)
+
+
+model58 <- lm(APT2EXF ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model58)
+
+
+model59<- lm(APXGWM6 ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model59)
+
+
+
+
+
+####Streptococcaceae
+model61 <- lm(AP7DV3P ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model61)
+
+
+model62 <- lm(AP9HPNM ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model62)
+
+
+model63 <- lm(APAAF2C ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model63)
+
+
+model64 <- lm(APCFAK9 ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model64)
+
+
+model65 <- lm(APKA92U ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model65)
+
+
+model66 <- lm(APMF3MR ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model66)
+
+
+model67 <- lm(APRWKDH ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model67)
+
+
+model68 <- lm(APT2EXF ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model68)
+
+
+model69<- lm(APXGWM6 ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
+summary(model69)
+
