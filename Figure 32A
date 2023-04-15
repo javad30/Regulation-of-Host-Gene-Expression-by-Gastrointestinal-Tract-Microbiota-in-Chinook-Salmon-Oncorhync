@@ -1,0 +1,110 @@
+#Figure 3A
+
+library("phyloseq")
+library("ggplot2")      
+library("readxl")       
+library("dplyr")      
+library("tibble")       
+library(cowplot)
+library(picante)
+library(tidyverse)
+library(phyloseq)
+library(DESeq2)
+library(vegan)
+library(devtools)
+library(ALDEx2)
+library(HMP)
+library(dendextend)
+library(rms)
+library("gridExtra")
+library(microbiome)
+library(scales)
+
+
+
+
+
+
+otu_mat <- as.matrix(read.table("Otu.txt", header=TRUE, sep = "\t",
+                                row.names = 1,
+                                
+                                
+                                as.is=TRUE))
+
+
+tax_mat <- as.matrix(read.table("taxonomy.txt", header=TRUE, sep = "\t",
+                                row.names = 1,
+                                
+                                
+                                as.is=TRUE))
+
+
+
+
+tree <- read.tree("tree.nwk")
+
+
+
+
+samples_df <- sample_df %>% 
+  tibble::column_to_rownames("X") 
+
+OTU = otu_table(otu_mat, taxa_are_rows = TRUE)
+TAX = tax_table(tax_mat)
+samples = sample_data(samples_df)
+
+ps  <- phyloseq(OTU, TAX, samples, tree)
+ps 
+
+#creat phyloseq objects based on sample type
+
+
+ps_Gut <- subset_samples(ps, Sample_Type=="Gut")
+
+
+###Gut
+
+get_taxa_unique(ps_Gut, "Family")
+
+
+
+sample_data(ps_Gut)$Treatments<-factor(sample_data(ps_Gut)$Treatments)
+
+sample_data(ps_Gut)$Sample_Type<-factor(sample_data(ps_Gut)$Sample_Type)
+
+
+
+
+phy2 <- ps_Gut %>% aggregate_taxa(level = "Family") %>%
+  
+  microbiome::transform(transform = "compositional")
+
+
+head(tax_table(phy2))
+
+
+phy2 %>%  plot_composition()+
+  
+  scale_y_continuous(labels = percent)
+
+
+
+
+phy3 <- aggregate_rare(phy2, level = "Family", detection = 10/100, prevalence = 5/100)
+
+
+
+
+phy3 %>%  plot_composition()+
+  
+  scale_y_continuous(labels = percent)
+
+
+phy3 %>%  plot_composition(group_by = "Treatments")+ scale_y_continuous(labels = percent) + theme_bw()
+
+phy3 %>%  plot_composition(average_by = "Treatments")+ scale_y_continuous(labels = percent) + theme_bw()
+
+
+
+phy3 %>%  plot_composition(average_by = "Treatments")+ scale_y_continuous(labels = percent) + theme_test() + xlab("Treatment Group") + 
+  ylab("Relative abundance (100%)") + labs(fill = "Top 10 taxa \n (family level)") 
