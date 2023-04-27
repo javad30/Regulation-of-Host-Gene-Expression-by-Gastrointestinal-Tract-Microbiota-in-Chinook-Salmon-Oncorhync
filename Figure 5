@@ -1,297 +1,250 @@
-#Figure 5
-library(tidyverse)
+###Spearman heatmap
 
-Both_Open_OTU_9_8$Barel
-Both_Open_OTU_9_8$Family
-Both_Open_OTU_9_8$Weight
-Both_Open_OTU_9_8$Sire
-Both_Open_OTU_9_8$Dam
-Both_Open_OTU_9_8$treatment
-Both_Open_OTU_9_8$AP7DV3P
-Both_Open_OTU_9_8$AP9HPNM
-Both_Open_OTU_9_8$APAAF2C
-Both_Open_OTU_9_8$APCFAK9
-Both_Open_OTU_9_8$APKA92U
-Both_Open_OTU_9_8$APMF3MR
-Both_Open_OTU_9_8$APRWKDH
-Both_Open_OTU_9_8$APT2EXF
-Both_Open_OTU_9_8$APXGWM6
-Both_Open_OTU_9_8$Aeromonadaceae
-Both_Open_OTU_9_8$Bifidobacteriaceae
-Both_Open_OTU_9_8$Desulfovibrionaceae
-Both_Open_OTU_9_8$Lactobacillaceae
-Both_Open_OTU_9_8$Mycoplasmataceae
-Both_Open_OTU_9_8$Pseudomonadaceae
-Both_Open_OTU_9_8$Streptococcaceae
+require(ggpubr)
+require(tidyverse)
+require(Hmisc)
+require(corrplot)
+library("pheatmap")
+library(ggpubr)
 
 
-####Aeromonadaceae
-model1 <- lm(AP7DV3P ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model1)
+
+matrix_a <- Taxa
+matrix_b <- Open
 
 
-model2 <- lm(AP9HPNM ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model2)
+bb <- cor(matrix_b, matrix_a, method = "spearman", use = "pairwise.complete.obs")
+nba_matrix <- data.matrix(bb)
+
+pheatmap(nba_matrix, cluster_cols=FALSE)
 
 
-model3 <- lm(APAAF2C ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model3)
+###Spearman correlation
 
 
-model4 <- lm(APCFAK9 ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model4)
+require(ggpubr)
+require(tidyverse)
+require(Hmisc)
+require(corrplot)
+library("pheatmap")
+library(ggpubr)
 
 
-model5 <- lm(APKA92U ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model5)
+
+matrix_a <- Taxa
+matrix_b <- Open
 
 
-model6 <- lm(APMF3MR ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model6)
+##Aeromonadaceae
+M1Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$sidt2, method=c("spearman"))
+M1Aeromonadaceae
 
+M2Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$rabep2, method=c("spearman"))
+M2Aeromonadaceae
 
-model7 <- lm(APRWKDH ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model7)
+M3Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$ffar2, method=c("spearman"))
+M3Aeromonadaceae
 
+M4Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$aifm3, method=c("spearman"))
+M4Aeromonadaceae
 
-model8 <- lm(APT2EXF ~ Aeromonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model8)
+M5Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$ub, method=c("spearman"))
+M5Aeromonadaceae
 
+M6Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Aeromonadaceae
 
-model9<- lm(APXGWM6 ~ Aeromonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model9)
+M7Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Aeromonadaceae
 
+M8Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$manf, method=c("spearman"))
+M8Aeromonadaceae
+
+M9Aeromonadaceae <- cor.test(matrix_a$Aeromonadaceae, matrix_b$prmt3, method=c("spearman"))
+M9Aeromonadaceae
 
 
 ####Bifidobacteriaceae
-model11 <- lm(AP7DV3P ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model11)
+M1Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$sidt2, method=c("spearman"))
+M1Bifidobacteriaceae
 
+M2Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$rabep2, method=c("spearman"))
+M2Bifidobacteriaceae
 
-model12 <- lm(AP9HPNM ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model12)
+M3Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$ffar2, method=c("spearman"))
+M3Bifidobacteriaceae
 
+M4Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$aifm3, method=c("spearman"))
+M4Bifidobacteriaceae
 
-model13 <- lm(APAAF2C ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model13)
+M5Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$ub, method=c("spearman"))
+M5Bifidobacteriaceae
 
+M6Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Bifidobacteriaceae
 
-model14 <- lm(APCFAK9 ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model14)
+M7Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Bifidobacteriaceae
 
+M8Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$manf, method=c("spearman"))
+M8Bifidobacteriaceae
 
-model15 <- lm(APKA92U ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model15)
+M9Bifidobacteriaceae <- cor.test(matrix_a$Bifidobacteriaceae, matrix_b$prmt3, method=c("spearman"))
+M9Bifidobacteriaceae
 
 
-model16 <- lm(APMF3MR ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model16)
+###Desulfovibrionaceae
+M1Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$sidt2, method=c("spearman"))
+M1Desulfovibrionaceae
 
+M2Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$rabep2, method=c("spearman"))
+M2Desulfovibrionaceae
 
-model17 <- lm(APRWKDH ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model17)
+M3Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$ffar2, method=c("spearman"))
+M3Desulfovibrionaceae
 
+M4Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$aifm3, method=c("spearman"))
+M4Desulfovibrionaceae
 
-model18 <- lm(APT2EXF ~ Bifidobacteriaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model18)
+M5Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$ub, method=c("spearman"))
+M5Desulfovibrionaceae
 
+M6Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Desulfovibrionaceae
 
-model19<- lm(APXGWM6 ~ Bifidobacteriaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model19)
+M7Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Desulfovibrionaceae
 
+M8Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$manf, method=c("spearman"))
+M8Desulfovibrionaceae
 
+M9Desulfovibrionaceae <- cor.test(matrix_a$Desulfovibrionaceae, matrix_b$prmt3, method=c("spearman"))
+M9Desulfovibrionaceae
 
 
 
-####Desulfovibrionaceae
-model21 <- lm(AP7DV3P ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model21)
+###Lactobacillaceae
+M1Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$sidt2, method=c("spearman"))
+M1Lactobacillaceae
 
+M2Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$rabep2, method=c("spearman"))
+M2Lactobacillaceae
 
-model22 <- lm(AP9HPNM ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model22)
+M3Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$ffar2, method=c("spearman"))
+M3Lactobacillaceae
 
+M4Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$aifm3, method=c("spearman"))
+M4Lactobacillaceae
 
-model23 <- lm(APAAF2C ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model23)
+M5Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$ub, method=c("spearman"))
+M5Lactobacillaceae
 
+M6Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Lactobacillaceae
 
-model24 <- lm(APCFAK9 ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model24)
+M7Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Lactobacillaceae
 
+M8Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$manf, method=c("spearman"))
+M8Lactobacillaceae
 
-model25 <- lm(APKA92U ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model25)
+M9Lactobacillaceae <- cor.test(matrix_a$Lactobacillaceae, matrix_b$prmt3, method=c("spearman"))
+M9Lactobacillaceae
 
 
-model26 <- lm(APMF3MR ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model26)
 
 
-model27 <- lm(APRWKDH ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model27)
 
 
-model28 <- lm(APT2EXF ~ Desulfovibrionaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model28)
+###Mycoplasmataceae
+M1Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$sidt2, method=c("spearman"))
+M1Mycoplasmataceae
 
+M2Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$rabep2, method=c("spearman"))
+M2Mycoplasmataceae
 
-model29<- lm(APXGWM6 ~ Desulfovibrionaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model29)
+M3Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$ffar2, method=c("spearman"))
+M3Mycoplasmataceae
 
+M4Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$aifm3, method=c("spearman"))
+M4Mycoplasmataceae
 
+M5Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$ub, method=c("spearman"))
+M5Mycoplasmataceae
 
+M6Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$dspa2b, method=c("spearman"))
+M6Mycoplasmataceae
 
-####Lactobacillaceae
-model31 <- lm(AP7DV3P ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model31)
+M7Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$tmem38b, method=c("spearman"))
+M7Mycoplasmataceae
 
+M8Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$manf, method=c("spearman"))
+M8Mycoplasmataceae
 
-model32 <- lm(AP9HPNM ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model32)
+M9Mycoplasmataceae <- cor.test(matrix_a$Mycoplasmataceae, matrix_b$prmt3, method=c("spearman"))
+M9Mycoplasmataceae
 
 
-model33 <- lm(APAAF2C ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model33)
 
 
-model34 <- lm(APCFAK9 ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model34)
+###Pseudomonadaceae
+M1Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$sidt2, method=c("spearman"))
+M1Pseudomonadaceae
 
+M2Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$rabep2, method=c("spearman"))
+M2Pseudomonadaceae
 
-model35 <- lm(APKA92U ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model35)
+M3Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$ffar2, method=c("spearman"))
+M3Pseudomonadaceae
 
+M4Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$aifm3, method=c("spearman"))
+M4Pseudomonadaceae
 
-model36 <- lm(APMF3MR ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model36)
+M5Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$ub, method=c("spearman"))
+M5Pseudomonadaceae
 
+M6Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Pseudomonadaceae
 
-model37 <- lm(APRWKDH ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model37)
+M7Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Pseudomonadaceae
 
+M8Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$manf, method=c("spearman"))
+M8Pseudomonadaceae
 
-model38 <- lm(APT2EXF ~ Lactobacillaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model38)
+M9Pseudomonadaceae <- cor.test(matrix_a$Pseudomonadaceae, matrix_b$prmt3, method=c("spearman"))
+M9Pseudomonadaceae
 
 
-model39<- lm(APXGWM6 ~ Lactobacillaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model39)
 
 
 
-####Mycoplasmataceae
-model41 <- lm(AP7DV3P ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model41)
+###Streptococcaceae
+M1Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$sidt2, method=c("spearman"))
+M1Streptococcaceae
 
+M2Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$rabep2, method=c("spearman"))
+M2Streptococcaceae
 
-model42 <- lm(AP9HPNM ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model42)
+M3Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$ffar2, method=c("spearman"))
+M3Streptococcaceae
 
+M4Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$aifm3, method=c("spearman"))
+M4Streptococcaceae
 
-model43 <- lm(APAAF2C ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model43)
+M5Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$ub, method=c("spearman"))
+M5Streptococcaceae
 
+M6Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$dspa2b, method=c("spearman"))
+M6Streptococcaceae
 
-model44 <- lm(APCFAK9 ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model44)
+M7Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$tmem38b, method=c("spearman"))
+M7Streptococcaceae
 
+M8Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$manf, method=c("spearman"))
+M8Streptococcaceae
 
-model45 <- lm(APKA92U ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model45)
+M9Streptococcaceae <- cor.test(matrix_a$Streptococcaceae, matrix_b$prmt3, method=c("spearman"))
+M9Streptococcaceae
 
-
-model46 <- lm(APMF3MR ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model46)
-
-
-model47 <- lm(APRWKDH ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model47)
-
-
-model48 <- lm(APT2EXF ~ Mycoplasmataceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model48)
-
-
-model49<- lm(APXGWM6 ~ Mycoplasmataceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model49)
-
-
-
-
-####Pseudomonadaceae
-model51 <- lm(AP7DV3P ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model51)
-
-
-model52 <- lm(AP9HPNM ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model52)
-
-
-model53 <- lm(APAAF2C ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model53)
-
-
-model54 <- lm(APCFAK9 ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model54)
-
-
-model55 <- lm(APKA92U ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model55)
-
-
-model56 <- lm(APMF3MR ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model56)
-
-
-model57 <- lm(APRWKDH ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model57)
-
-
-model58 <- lm(APT2EXF ~ Pseudomonadaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model58)
-
-
-model59<- lm(APXGWM6 ~ Pseudomonadaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model59)
-
-
-
-
-
-####Streptococcaceae
-model61 <- lm(AP7DV3P ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model61)
-
-
-model62 <- lm(AP9HPNM ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model62)
-
-
-model63 <- lm(APAAF2C ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model63)
-
-
-model64 <- lm(APCFAK9 ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model64)
-
-
-model65 <- lm(APKA92U ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model65)
-
-
-model66 <- lm(APMF3MR ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model66)
-
-
-model67 <- lm(APRWKDH ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model67)
-
-
-model68 <- lm(APT2EXF ~ Streptococcaceae + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model68)
-
-
-model69<- lm(APXGWM6 ~ Streptococcaceae  + treatment + Family, data = Both_Open_OTU_9_8)
-summary(model69)
-
+#Figure 5
